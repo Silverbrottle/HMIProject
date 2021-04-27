@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <title>Home Page</title>
+  <style>
+    .button {
+  width: 200px;
+  height: 45px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #4ef33f;
+  box-shadow: 0px 15px 20px rgba(77, 229, 46, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+.box {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+    </style>
+</head>
+<body background="{{url_for('static',filename='/img/bkg1.jpg')}}" style="background-repeat: no-repeat;background-size: cover;">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" style="padding-top:4px">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">History</a>
+        <a class="nav-item nav-link" href="#">Pricing</a>
+      </div>
+    </div>
+    <span class="navbar-text p-sm-3">
+      {% if user %}
+        {{user}}
+      {% endif %}
+    </span>
+    <a href="{{url_for('logout')}}" class="btn btn-info" style="float:right;">
+      <span class="glyphicon glyphicon-log-out"></span> Log out
+    </a>
+  </nav>
+  <div style="padding-top: 250px;padding-bottom: 20px;">
+  <div class="container box">
+    <b><h1 style="color: white;text-shadow:1px 1px black;">Welcome to Internet Cafe</h1></b><br>
+    <button type="button" class="button" data-hover=">>>>"><span>Click to continue</span></button>
+  </div>
+  </div>
+</body>
+</html>
